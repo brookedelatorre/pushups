@@ -19,6 +19,8 @@ data(pushups)
 
 <!--In this section you explain what you are trying to show. Where did the data come from? What is the research or other question you are trying to answer?!-->
 
+In this study we are trying to find out if there is a relationship between pushups and a persons position.
+
 # Methods
 
 <!--Decide on your methods: use "variable analysis" or other appropriate descriptors. Make sure to choose at least one graphical method and at least one numerical method.!-->
@@ -43,7 +45,9 @@ $H_A$:The alternative hypothesis states that there is a difference in the averag
 ```{r}
 plot(pushups~position,data=pushups)
 ```
-
+   
+Based on the graph there seems to be a correlation between skill and pushups because the median is higher than line.
+   
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -51,16 +55,20 @@ plot(pushups~position,data=pushups)
 ```{r}
 favstats(pushups~position,data=pushups)
 ```
+
+In this data it shows that the Skill position is greater than Line in all segments(Min,Q1,Median,Q3,Max,Mean).
+
 ## Inferential Results
 
 <!--State hypothesis clearly. Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc. Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 ```{r}
-t.test(momheight~Sex,data=ucdavis1)
+t.test(pushups~position,data=pushups)
 ``` 
 
+The p-value is smaller than 0.05 so we reject the null hypothesis.The null hypothesis states that there is no difference in the average number of pushups players can do in two minutes based on the position they play.  
+
 # Discussion and Conclusion
+We have a t-test because the categorical variable has only two levels line and skill.The p-value is smaller than 0.05 so we reject the null hypothesis.The null hypothesis states that there is no difference in the average number of pushups players can do in two minutes based on the position they play.This means that any player in any position is capable of performing the same amount of pushups.
 
 <!--Discussion and conclusion here. If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason. Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
-
-When your markdown file successfully knits and you are satisfied with your results, then push your work back to your github repository and submit the link to your github repo to canvas  to complete this assignment.
